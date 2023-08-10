@@ -1,0 +1,35 @@
+h1 {
+    text-align: center;
+    font-size: 70px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+.contenedor0 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /*width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;*/
+}
+
+.contenedor1 {
+    width: 50%;
+}
+
+.contenedorimagenes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagen {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+}
