@@ -3,46 +3,54 @@
     <head>
         <link rel="stylesheet" type="text/css" href="estilos.css">
         <title> Alta pagina perro </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
     </head>
 
-    <body style="background-color: aqua;">
+    <body style="background-color: aqua; margin: 0px;">
         <header class="header">
             <h1> Este es el encabezado h1 de la página. </h1>
         </header>
-
-        <a href="http://www.youtube.com">
-            Con este link vas a YouTube.
-        </a> <br><br>
-
-        <div class="container1">
-            <p>
-                Este es el primer párrafo de la página.
-            </p>
-
-        </div> <br>
-
-        <div class="container2">
-            <p id="segundoparrafo">
-                Este es el segundo párrafo de la página.
-            </p>
-        </div> <br>
-
-        <a href="http://www.youtube.com">
-            Con este link también podés ir a YouTube.
-        </a> <br>
-
-        <p id="descripcionvideo">
-            Clickeá en la siguiente imagen para ver un video de un perro tomando mate.
-        </p>
-
-        <a href="https://www.youtube.com/shorts/IMtrBORJQEc">
-            <img src="perro.jpg" width="650" height="434" />
+        <h2> Este es el encabezado h2. </h2>
+        <a href="http://www.youtube.com"> Abrir YouTube en esta pestaña. </a>
+        <br><br>
+        <div class="container0">
+            <div class="container1">
+                <p> Este es el primer párrafo de la página. </p>
+            </div>
+            <br>
+            <div class="container2">
+                <p id="segundoparrafo"> Este es el segundo párrafo de la página. </p>
+                <div>
+                    <ul class="lista">
+                        Materias del 4to semestre:
+                        <li>Desarrollo Web y Mobile</li>
+                        <li>Redes de Datos</li>
+                        <li>Bases de Datos I</li>
+                    </ul>
+                    <div>
+                        <p> Esto es un p dentro de un div dentro de otro div dentro de otro div. </p>
+                    </div>
+                </div>
+            </div> <br>
+        </div>
+        <a href="http://www.youtube.com" target="_blank"> Abrir YouTube en una nueva pestaña. </a>
+        <br>
+        <p id="descripcionvideo"> Clickeá en la siguiente imagen para ver un video de un perro tomando mate. </p>
+        <a href="https://www.youtube.com/shorts/IMtrBORJQEc" target="_blank">
+            <img src="perro.jpg" width="100%" />
         </a>
-
+        <br>
+        <p> Seleccione la raza del perro de la imagen: </p>
+        <select name="Raza" id="listadeperros">
+            <option value="opcion1" selected>Seleccione una opción</option>
+            <option value="opcion2">Golden Retriever</option>
+            <option value="opcion3">Labrador</option>
+            <option value="opcion4">Caniche</option>
+            <option value="opcion5">Jugador de Nacional</option>
+        </select>
         <footer>
             &copy; Hernán Ciarlo
         </footer>
-
     </body>
 
 </html>
