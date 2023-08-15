@@ -1,0 +1,20 @@
+.fondo {
+    background-color: aliceblue;
+}
+
+.contenedor {
+    display: flex;
+    justify-content: center;
+}
+
+.primeracolumna {
+    background-color: rgb(252, 228, 228);
+}
+
+.segundacolumna {
+    background-color: rgb(252, 252, 214);
+}
+
+.terceracolumna {
+    background-color: rgb(219, 248, 218);
+}
