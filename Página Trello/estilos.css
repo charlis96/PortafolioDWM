@@ -2,11 +2,6 @@
     background-color: aliceblue;
 }
 
-.contenedor {
-    display: flex;
-    justify-content: center;
-}
-
 .primeracolumna {
     background-color: rgb(252, 228, 228);
 }
