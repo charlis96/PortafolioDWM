@@ -11,13 +11,13 @@
     </head>
 
     <body class="fondo">
-        <header class="d-flex justify-content-center">
+        <header class="encabezado">
             <h1 class="titulo">Trello</h1>
         </header>
-        <div class="container px-4 align-items-start">
-            <div class="row gx-3.5">
-                <div class="col-md">
-                    <div class="p-3 primeracolumna border rounded">
+        <div class="contenedor">
+            <div class="px-3 gx-3.5 d-flex fila mh-100">
+                <div class="col mh-100 w-650px">
+                    <div class="p-3 colorcolumna border rounded">
                         <h2>Por hacer</h2>
                         <div class="container d-flex gap-2 p-0">
                             <p class="d-inline-flex gap-1">
@@ -47,10 +47,6 @@
                                                     <label for="contenido1" class="form-label">Contenido de la tarjeta</label>
                                                     <input type="text" class="form-control" id="contenido1">
                                                 </div>
-                                                <div class="mb-3">
-                                                    <label for="link1" class="form-label">Link con información (sin incluir "http://www.")</label>
-                                                    <input type="text" class="form-control" id="link1">
-                                                </div>
                                             </form>
                                         </div>
                                         <div class="modal-footer">
@@ -62,13 +58,13 @@
                             </div>
                         </div>
                         <div class="collapse show" id="collapseExample1">
-                            <div class="container d-flex flex-column gap-3 p-0" id="contenedortarjetas1">
+                            <div class="contenedortarjetas" id="contenedortarjetas1">
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md">
-                    <div class="p-3 segundacolumna border rounded">
+                <div class="col mh-100 w-650px">
+                    <div class="p-3 colorcolumna border rounded">
                         <h2>En proceso</h2>
                         <div class="container d-flex gap-2 p-0">
                             <p class="d-inline-flex gap-1">
@@ -98,10 +94,6 @@
                                                     <label for="contenido2" class="form-label">Contenido de la tarjeta</label>
                                                     <input type="text" class="form-control" id="contenido2">
                                                 </div>
-                                                <div class="mb-3">
-                                                    <label for="link2" class="form-label">Link con información (sin incluir "http://www.")</label>
-                                                    <input type="text" class="form-control" id="link2">
-                                                </div>
                                             </form>
                                         </div>
                                         <div class="modal-footer">
@@ -113,13 +105,13 @@
                             </div>
                         </div>
                         <div class="collapse show" id="collapseExample2">
-                            <div class="container d-flex flex-column gap-3 p-0" id="contenedortarjetas2">
+                            <div class="contenedortarjetas" id="contenedortarjetas2">
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md">
-                    <div class="p-3 terceracolumna border rounded">
+                <div class="col mh-100 w-650px">
+                    <div class="p-3 colorcolumna border rounded">
                         <h2>Terminado</h2>
                         <div class="container d-flex gap-2 p-0">
                             <p class="d-inline-flex gap-1">
@@ -149,9 +141,52 @@
                                                     <label for="contenido3" class="form-label">Contenido de la tarjeta</label>
                                                     <input type="text" class="form-control" id="contenido3">
                                                 </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                            <button type="button" class="btn btn-primary" id="creartarjeta3">Crear tarjeta</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="collapse show" id="collapseExample3">
+                            <div class="contenedortarjetas" id="contenedortarjetas3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="p-3 colorcolumna border rounded">
+                        <h2>Terminado</h2>
+                        <div class="container d-flex gap-2 p-0">
+                            <p class="d-inline-flex gap-1">
+                                <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                    Mostrar / Ocultar
+                                </a>
+                            </p>
+                            <p class="d-inline-flex gap-1">
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal3">
+                                    +
+                                </button>
+                            </p>
+                            <div class="modal fade" id="modal3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel3" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="staticBackdropLabel3">Modal title</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form>
                                                 <div class="mb-3">
-                                                    <label for="link3" class="form-label">Link con información (sin incluir "http://www.")</label>
-                                                    <input type="text" class="form-control" id="link3">
+                                                    <label for="titulo3" class="form-label">Título de la tarjeta</label>
+                                                    <input type="text" class="form-control" id="titulo3">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="contenido3" class="form-label">Contenido de la tarjeta</label>
+                                                    <input type="text" class="form-control" id="contenido3">
                                                 </div>
                                             </form>
                                         </div>
@@ -168,6 +203,389 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="col">
+                    <div class="p-3 colorcolumna border rounded">
+                        <h2>Terminado</h2>
+                        <div class="container d-flex gap-2 p-0">
+                            <p class="d-inline-flex gap-1">
+                                <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                    Mostrar / Ocultar
+                                </a>
+                            </p>
+                            <p class="d-inline-flex gap-1">
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal3">
+                                    +
+                                </button>
+                            </p>
+                            <div class="modal fade" id="modal3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel3" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="staticBackdropLabel3">Modal title</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form>
+                                                <div class="mb-3">
+                                                    <label for="titulo3" class="form-label">Título de la tarjeta</label>
+                                                    <input type="text" class="form-control" id="titulo3">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="contenido3" class="form-label">Contenido de la tarjeta</label>
+                                                    <input type="text" class="form-control" id="contenido3">
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                            <button type="button" class="btn btn-primary" id="creartarjeta3">Crear tarjeta</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="collapse show" id="collapseExample3">
+                            <div class="container d-flex flex-column gap-3 p-0" id="contenedortarjetas3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="p-3 colorcolumna border rounded">
+                        <h2>Terminado</h2>
+                        <div class="container d-flex gap-2 p-0">
+                            <p class="d-inline-flex gap-1">
+                                <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                    Mostrar / Ocultar
+                                </a>
+                            </p>
+                            <p class="d-inline-flex gap-1">
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal3">
+                                    +
+                                </button>
+                            </p>
+                            <div class="modal fade" id="modal3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel3" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="staticBackdropLabel3">Modal title</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form>
+                                                <div class="mb-3">
+                                                    <label for="titulo3" class="form-label">Título de la tarjeta</label>
+                                                    <input type="text" class="form-control" id="titulo3">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="contenido3" class="form-label">Contenido de la tarjeta</label>
+                                                    <input type="text" class="form-control" id="contenido3">
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                            <button type="button" class="btn btn-primary" id="creartarjeta3">Crear tarjeta</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="collapse show" id="collapseExample3">
+                            <div class="container d-flex flex-column gap-3 p-0" id="contenedortarjetas3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="p-3 colorcolumna border rounded">
+                        <h2>Terminado</h2>
+                        <div class="container d-flex gap-2 p-0">
+                            <p class="d-inline-flex gap-1">
+                                <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                    Mostrar / Ocultar
+                                </a>
+                            </p>
+                            <p class="d-inline-flex gap-1">
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal3">
+                                    +
+                                </button>
+                            </p>
+                            <div class="modal fade" id="modal3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel3" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="staticBackdropLabel3">Modal title</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form>
+                                                <div class="mb-3">
+                                                    <label for="titulo3" class="form-label">Título de la tarjeta</label>
+                                                    <input type="text" class="form-control" id="titulo3">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="contenido3" class="form-label">Contenido de la tarjeta</label>
+                                                    <input type="text" class="form-control" id="contenido3">
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                            <button type="button" class="btn btn-primary" id="creartarjeta3">Crear tarjeta</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="collapse show" id="collapseExample3">
+                            <div class="container d-flex flex-column gap-3 p-0" id="contenedortarjetas3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="p-3 colorcolumna border rounded">
+                        <h2>Terminado</h2>
+                        <div class="container d-flex gap-2 p-0">
+                            <p class="d-inline-flex gap-1">
+                                <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                    Mostrar / Ocultar
+                                </a>
+                            </p>
+                            <p class="d-inline-flex gap-1">
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal3">
+                                    +
+                                </button>
+                            </p>
+                            <div class="modal fade" id="modal3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel3" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="staticBackdropLabel3">Modal title</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form>
+                                                <div class="mb-3">
+                                                    <label for="titulo3" class="form-label">Título de la tarjeta</label>
+                                                    <input type="text" class="form-control" id="titulo3">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="contenido3" class="form-label">Contenido de la tarjeta</label>
+                                                    <input type="text" class="form-control" id="contenido3">
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                            <button type="button" class="btn btn-primary" id="creartarjeta3">Crear tarjeta</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="collapse show" id="collapseExample3">
+                            <div class="container d-flex flex-column gap-3 p-0" id="contenedortarjetas3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="p-3 colorcolumna border rounded">
+                        <h2>Terminado</h2>
+                        <div class="container d-flex gap-2 p-0">
+                            <p class="d-inline-flex gap-1">
+                                <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                    Mostrar / Ocultar
+                                </a>
+                            </p>
+                            <p class="d-inline-flex gap-1">
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal3">
+                                    +
+                                </button>
+                            </p>
+                            <div class="modal fade" id="modal3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel3" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="staticBackdropLabel3">Modal title</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form>
+                                                <div class="mb-3">
+                                                    <label for="titulo3" class="form-label">Título de la tarjeta</label>
+                                                    <input type="text" class="form-control" id="titulo3">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="contenido3" class="form-label">Contenido de la tarjeta</label>
+                                                    <input type="text" class="form-control" id="contenido3">
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                            <button type="button" class="btn btn-primary" id="creartarjeta3">Crear tarjeta</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="collapse show" id="collapseExample3">
+                            <div class="container d-flex flex-column gap-3 p-0" id="contenedortarjetas3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="p-3 colorcolumna border rounded">
+                        <h2>Terminado</h2>
+                        <div class="container d-flex gap-2 p-0">
+                            <p class="d-inline-flex gap-1">
+                                <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                    Mostrar / Ocultar
+                                </a>
+                            </p>
+                            <p class="d-inline-flex gap-1">
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal3">
+                                    +
+                                </button>
+                            </p>
+                            <div class="modal fade" id="modal3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel3" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="staticBackdropLabel3">Modal title</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form>
+                                                <div class="mb-3">
+                                                    <label for="titulo3" class="form-label">Título de la tarjeta</label>
+                                                    <input type="text" class="form-control" id="titulo3">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="contenido3" class="form-label">Contenido de la tarjeta</label>
+                                                    <input type="text" class="form-control" id="contenido3">
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                            <button type="button" class="btn btn-primary" id="creartarjeta3">Crear tarjeta</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="collapse show" id="collapseExample3">
+                            <div class="container d-flex flex-column gap-3 p-0" id="contenedortarjetas3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="p-3 colorcolumna border rounded">
+                        <h2>Terminado</h2>
+                        <div class="container d-flex gap-2 p-0">
+                            <p class="d-inline-flex gap-1">
+                                <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                    Mostrar / Ocultar
+                                </a>
+                            </p>
+                            <p class="d-inline-flex gap-1">
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal3">
+                                    +
+                                </button>
+                            </p>
+                            <div class="modal fade" id="modal3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel3" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="staticBackdropLabel3">Modal title</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form>
+                                                <div class="mb-3">
+                                                    <label for="titulo3" class="form-label">Título de la tarjeta</label>
+                                                    <input type="text" class="form-control" id="titulo3">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="contenido3" class="form-label">Contenido de la tarjeta</label>
+                                                    <input type="text" class="form-control" id="contenido3">
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                            <button type="button" class="btn btn-primary" id="creartarjeta3">Crear tarjeta</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="collapse show" id="collapseExample3">
+                            <div class="container d-flex flex-column gap-3 p-0" id="contenedortarjetas3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="p-3 colorcolumna border rounded">
+                        <h2>Terminado</h2>
+                        <div class="container d-flex gap-2 p-0">
+                            <p class="d-inline-flex gap-1">
+                                <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                    Mostrar / Ocultar
+                                </a>
+                            </p>
+                            <p class="d-inline-flex gap-1">
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal3">
+                                    +
+                                </button>
+                            </p>
+                            <div class="modal fade" id="modal3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel3" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="staticBackdropLabel3">Modal title</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form>
+                                                <div class="mb-3">
+                                                    <label for="titulo3" class="form-label">Título de la tarjeta</label>
+                                                    <input type="text" class="form-control" id="titulo3">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="contenido3" class="form-label">Contenido de la tarjeta</label>
+                                                    <input type="text" class="form-control" id="contenido3">
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                            <button type="button" class="btn btn-primary" id="creartarjeta3">Crear tarjeta</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="collapse show" id="collapseExample3">
+                            <div class="container d-flex flex-column gap-3 p-0" id="contenedortarjetas3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col d-flex align-items-center">
+                    <p class="d-inline-flex gap-1 align-items-center">
+                        <button type="button" class="btn btn-light">
+                            Agregar una nueva columna
+                        </button>
+                    </p>
                 </div>
             </div>
         </div>

@@ -1,15 +1,44 @@
 .fondo {
     background-color: rgb(192, 223, 250);
+    height: 100vh;
 }
 
-.primeracolumna {
-    background-color: rgb(252, 228, 228);
+.encabezado {
+    display: flex;
+    justify-content: center;
+    height: 10%;
 }
 
-.segundacolumna {
-    background-color: rgb(252, 252, 214);
+.colorcolumna {
+    background-color: white;
 }
 
-.terceracolumna {
-    background-color: rgb(219, 248, 218);
+.contenedor {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    height: 90%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+.fila {
+    display: inline-block;
+    flex-wrap: nowrap;
+    gap: 15px;
+}
+
+.contenedortarjetas {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 700px;
+}
+
+.prueba {
+    flex: 1 0 auto;
 }

@@ -1,10 +1,10 @@
-function addCard(columna, contenedor, titulo, contenido, link) {
+function addCard(contenedor, titulo, contenido, url) {
 
-    const tutorialLink = document.createElement("a");
-    tutorialLink.href = "http://www." + link;
-    tutorialLink.target = "_blank";
-    tutorialLink.className = "btn btn-primary";
-    tutorialLink.textContent = "Más información";
+    const infoLink = document.createElement("a"); // Cuando se clickea este botón, se abre la primera búsqueda de Google de lo que se puso como título de la tarjeta
+    infoLink.href = "https://" + url;
+    infoLink.target = "_blank";
+    infoLink.className = "btn btn-primary wrap";
+    infoLink.textContent = "Más info";
 
     const deleteLink = document.createElement("button");
     deleteLink.type = "button";
@@ -14,7 +14,7 @@ function addCard(columna, contenedor, titulo, contenido, link) {
     const contenedorBotones = document.createElement("div");
     contenedorBotones.className = "container d-flex flex-column gap-1";
 
-    contenedorBotones.appendChild(tutorialLink);
+    contenedorBotones.appendChild(infoLink);
     contenedorBotones.appendChild(deleteLink);
 
     const cardTitle = document.createElement("h5");
@@ -38,18 +38,18 @@ function addCard(columna, contenedor, titulo, contenido, link) {
 
     cardContent.appendChild(cardBody);
 
-    const primeracolumna = document.createElement("div");
-    primeracolumna.className = columna;
+    const columna = document.createElement("div");
+    columna.className = "colorcolumna";
 
-    primeracolumna.appendChild(cardContent);
+    columna.appendChild(cardContent);
 
     const col = document.createElement("div");
-    col.className = "col";
+    col.className = "prueba";
 
-    col.appendChild(primeracolumna);
+    col.appendChild(columna);
 
     const card = document.createElement("div");
-    card.className = "card card-body";
+    card.className = "card card-body p-2";
     let min = 1;
     let max = 100000;
     let randomInteger = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -69,33 +69,33 @@ function addCard(columna, contenedor, titulo, contenido, link) {
 
 let titulo1 = document.getElementById("titulo1");
 let contenido1 = document.getElementById("contenido1");
-let link1 = document.getElementById("link1");
 let modal1 = new bootstrap.Modal(document.getElementById("modal1"));
 
 let titulo2 = document.getElementById("titulo2");
 let contenido2 = document.getElementById("contenido2");
-let link2 = document.getElementById("link2");
 let modal2 = new bootstrap.Modal(document.getElementById("modal2"));
 
 let titulo3 = document.getElementById("titulo3");
 let contenido3 = document.getElementById("contenido3");
-let link3 = document.getElementById("link3");
 let modal3 = new bootstrap.Modal(document.getElementById("modal3"));
 
 
-document.getElementById("creartarjeta1").addEventListener("click", function () {
+document.getElementById("creartarjeta1").addEventListener("click", async function () {
     modal1.hide();
-    addCard("primeracolumna", "contenedortarjetas1", titulo1.value, contenido1.value, link1.value);
+    const url = await busquedaGoogle(titulo1.value); // Guarda en esta variable la url mencionada debajo
+    addCard("contenedortarjetas1", titulo1.value, contenido1.value, url);
 });
 
-document.getElementById("creartarjeta2").addEventListener("click", function () {
+document.getElementById("creartarjeta2").addEventListener("click", async function () {
     modal2.hide();
-    addCard("segundacolumna", "contenedortarjetas2", titulo2.value, contenido2.value, link2.value);
+    const url = await busquedaGoogle(titulo2.value);
+    addCard("contenedortarjetas2", titulo2.value, contenido2.value, url);
 });
 
-document.getElementById("creartarjeta3").addEventListener("click", function () {
+document.getElementById("creartarjeta3").addEventListener("click", async function () {
     modal3.hide();
-    addCard("terceracolumna", "contenedortarjetas3", titulo3.value, contenido3.value, link3.value);
+    const url = await busquedaGoogle(titulo3.value);
+    addCard("contenedortarjetas3", titulo3.value, contenido3.value, url);
 });
 
 modal1._element.addEventListener("show.bs.modal", function () {
@@ -115,3 +115,33 @@ modal3._element.addEventListener("show.bs.modal", function () {
     contenido3.value = "";
     link3.value = "";
 });
+
+// Esta función devuelve la url de la primera búsqueda de Google del argumento que se le pasa.
+async function busquedaGoogle(busqueda) {
+    let url = new URL('https://google-search72.p.rapidapi.com/search');
+
+    let params = {
+        q: busqueda,
+        num: 1,
+        start: 0
+    };
+
+    url.search = new URLSearchParams(params).toString();
+
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': '66f6342837mshc9d25ffbe7d365fp12c67ejsnaa35602c726b',
+            'X-RapidAPI-Host': 'google-search72.p.rapidapi.com'
+        }
+    };
+
+    try {
+        const response = await fetch(url, options);
+        const result = await response.json();
+        return result.items[0].displayLink;
+    } catch (error) {
+        console.error(error);
+        return null;
+    }
+}
