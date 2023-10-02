@@ -1,0 +1,10 @@
+<div id="overlay">
+    <div class="card contenedor" (keydown.escape)="closeModal()">
+        <img src="{{game?.image}}" class="card-img-top" alt="Imagen del juego">
+        <div class="card-body">
+            <h5 class="card-title">{{game?.name}}</h5>
+            <p class="card-text">{{game?.details}}</p>
+            <button (click)="closeModal()" type="button" class="btn btn-danger">Cerrar</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,5 @@
+<div id="search-component">
+    <label for="search-box">Buscá el juego que quieras:</label>
+    <input #searchBox id="search-box" (keydown)="handleInput($event, searchBox.value)" placeholder="Escribí acá" />
+    <button type="button" class="btn btn-light" (click)="handleButtonClick(searchBox.value)" data-bs-dismiss="offcanvas">Buscar</button>
+</div>

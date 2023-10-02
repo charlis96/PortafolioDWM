@@ -1,0 +1,10 @@
+<div class="container text-center margen">
+    <div class="row">
+        <div *ngFor="let game of gameResponse.results" class="col-lg-4 col-md-6 col-sm-12 my-2 d-flex justify-content-center">
+            <app-card [game]="game" (idEmitted)="receiveId($event)"></app-card>
+        </div>
+    </div>
+</div>
+<div *ngIf="showModal">
+    <app-modal [game]="this.game" (closeModalEvent)="closeModal()"></app-modal>
+</div>

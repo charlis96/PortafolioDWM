@@ -1,0 +1,8 @@
+<div *ngIf="game" class="card fixedsize">
+    <img src="{{game.background_image}}" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">{{game.name}}</h5>
+        <p class="card-text">Rating: {{game.rating}}</p>
+        <button class="btn btn-primary" (click)="sendId()">Más información</button>
+    </div>
+</div>
